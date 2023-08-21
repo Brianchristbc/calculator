@@ -32,7 +32,7 @@ for (let button of buttons) {
     if (!(button.className === "clear" || button.className === "delete" || button.className === "operate")) {
       screen.textContent += button.textContent;
     }
-  })
+  })}
 
 //   window.addEventListener("keydown", (e) => {
 //     if (e.code === "Backspace") {
