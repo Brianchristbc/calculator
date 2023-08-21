@@ -1,0 +1,33 @@
+body {
+ margin: 0;
+ width: 100vw;
+ height: 100vh;
+}
+
+button {
+  padding: 15px;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.screen {
+  width: 40vw;
+  height: 10vh;
+  border: 2px solid black;
+}
+
+.row-1,
+.row-2,
+.row-3,
+.row-4,
+.row-5 {
+  display: flex;
+  padding: 15px;
+  gap: 15px;
+}
