@@ -41,7 +41,7 @@ for (let button of buttons) {
   window.addEventListener("keydown", (e) => {
     const regexNumber = /[0-9]/;
     const regexAlpha = /[a-z]/;
-    if (regexAlpha.test(e.key) === true) {
+    if (regexAlpha.test(e.key) === true && e.code !== "Backspace") {
       console.log(equation)
       const filler = screen.textContent;
       screen.textContent = "INVALID NUMBER";
