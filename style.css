@@ -55,7 +55,12 @@ button {
 }
 
 .operand,
-.operate {
+.operate,
+.add,
+.subtract,
+.divide,
+.multiply,
+.dot {
   background-color: orange;
   color: white;
   border: none;
@@ -67,6 +72,10 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.operate {
+  width: 250%;
 }
 
 .number {
@@ -111,7 +120,8 @@ button {
   align-items: center;
 }
 
-.eval {
+.delete,
+.clear {
   background-color: black;
   color: white;
   border: none;

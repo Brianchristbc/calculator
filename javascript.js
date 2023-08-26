@@ -10,6 +10,7 @@ window.addEventListener("load", () => {
 const backdrop = document.querySelector('.backdrop');
 backdrop.addEventListener("click", () => {
   const audio = document.querySelector('.audio');
+  audio.currentTime = 0;
   audio.play();
 })
 
