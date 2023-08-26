@@ -1,6 +1,22 @@
 let equation = ""
 const screen = document.querySelector('.screen')
 const buttons = document.querySelectorAll('button');
+screen.textContent = "BMO SAYS HELLO :)"
+
+window.addEventListener("load", () => {
+  setTimeout(loadScreen, 400)
+})
+
+const backdrop = document.querySelector('.backdrop');
+backdrop.addEventListener("click", () => {
+  const audio = document.querySelector('.audio');
+  audio.play();
+})
+
+function loadScreen() {
+  screen.textContent = "";
+}
+
 for (let button of buttons) {
   button.addEventListener('click', () => {
     if (button.className === "add" || button.className === "subtract" || button.className === "multiply" || button.className === "divide") {
