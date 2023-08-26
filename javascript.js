@@ -3,6 +3,17 @@ const screen = document.querySelector('.screen')
 const buttons = document.querySelectorAll('button');
 for (let button of buttons) {
   button.addEventListener('click', () => {
+    if (button.className === "add" || button.className === "subtract" || button.className === "multiply" || button.className === "divide") {
+      let parts = equation.split("")
+      for (let i=0; i<parts.length;i++) {
+        if (parts[i] === "+" || parts[i] === "-" || parts[i] === "/" || parts[i] === "*") {
+          equation = getCalc(equation);
+          screen.textContent = equation;
+        } else {
+          continue;
+        }
+      }
+    }
     if (button.className === "clear") {
       equation = "";
       screen.textContent = equation;
@@ -30,7 +41,19 @@ for (let button of buttons) {
   window.addEventListener("keydown", (e) => {
     const regexNumber = /[0-9]/;
     const regexAlpha = /[a-z]/;
-    if (regexAlpha.test(e.key) === true && e.code !== "Backspace" && e.code !== "Enter") {
+    if (e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/") {
+      let parts = equation.split("")
+      for (let i=0; i<parts.length;i++) {
+        if (parts[i] === "+" || parts[i] === "-" || parts[i] === "/" || parts[i] === "*") {
+          equation = getCalc(equation);
+          screen.textContent = equation;
+        } else {
+          continue;
+        }
+      }
+    }
+
+    if (regexAlpha.test(e.key) === true && e.code !== "Backspace" && e.code !== "Enter" && e.code !== "ShiftLeft") {
       console.log(equation)
       const filler = screen.textContent;
       screen.textContent = "INVALID NUMBER";
@@ -57,7 +80,7 @@ for (let button of buttons) {
       screen.textContent = equation;
       console.log(equation)
 
-    } else if (!(e.code === "Backspace" || e.code === "Escape")) {
+    } else if (!(e.code === "Backspace" || e.code === "Escape" || e.code === "ShiftLeft" || e.code === "ShiftRight")) {
         equation += e.key;
         screen.textContent = equation;
         console.log(equation)
@@ -124,7 +147,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  return a / b;
+  return Math.round(a / b);
 }
 
 

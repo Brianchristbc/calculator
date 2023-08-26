@@ -10,6 +10,7 @@ button {
 
 .calculator {
   display: flex;
+  margin-top: 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -31,3 +32,4 @@ button {
   padding: 15px;
   gap: 15px;
 }
+
